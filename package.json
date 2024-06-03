@@ -14,10 +14,19 @@
   "contributes": {
     "commands": [
       {
-        "command": "imi-tools.helloWorld",
-        "title": "Hello World"
+        "command": "imi-tools.newModule",
+        "title": "新建sigi module"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "imi-tools.newModule",
+          "when": "explorerResourceIsFolder",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
