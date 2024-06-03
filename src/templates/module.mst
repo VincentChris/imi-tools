@@ -1,0 +1,15 @@
+import { EffectModule, ImmerReducer, Module, Reducer } from 'imi'
+const defaultState = {
+  queryParams: {
+  },
+}
+type IState = typeof defaultState
+@Module('{{moduleName}}')
+export class {{moduleName}}Module extends EffectModule<IState> {
+  defaultState: IState = defaultState
+
+  @Reducer()
+  setState(state: IState, newState: Partial<IState>) {
+    return { ...state, ...newState }
+  }
+}
